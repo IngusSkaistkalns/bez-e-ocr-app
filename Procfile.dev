@@ -1,0 +1,2 @@
+development_app: bundle exec puma -C config/puma.rb
+development_npm: npm run dev
