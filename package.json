@@ -10,7 +10,6 @@
     "build": "webpack -p --config webpack.config.js --profile --progress --colors"
   },
   "dependencies": {
-    "webpack": "^1.13.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "axios": "0.15.2"
@@ -27,6 +26,7 @@
     "sass-loader": "^4.0.1",
     "node-sass": "^3.13.0",
     "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
 }
