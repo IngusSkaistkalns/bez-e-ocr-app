@@ -6,4 +6,7 @@ html
   body
     #root
   script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js"
-  script src="http://localhost:8080/public/app.js"
+  - if ENV['RACK_ENV'] == 'production'
+    script src="/app.js"
+  - else
+    script src="http://localhost:8080/public/app.js"
