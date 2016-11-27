@@ -12,6 +12,8 @@ Dependencies
 * node 6.3
 * Tessaract - https://github.com/meh/ruby-tesseract-ocr, follow instructions.
 
+At client side https://github.com/naptha/tesseract.js is used.
+
 If problems with loading language tessdata, set correct TESSDATA_PREFIX - parent dir of tessdata.
 For Ubutnu 16.x for example it is `/usr/share/tesseract-ocr`
 
