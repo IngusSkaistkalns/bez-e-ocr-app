@@ -67,8 +67,7 @@ class ImageUploadForm extends React.Component {
   renderOcrResult() {
     if (this.state.ocrText) {
       return (
-        <div>
-          <br /><br />
+        <div className="well" style={{"font-size": "2rem"}}>
           <strong>OCR Text: </strong>{this.state.ocrText}
         </div>
       );
@@ -80,14 +79,22 @@ class ImageUploadForm extends React.Component {
     return (
       <form onSubmit={this.submit}>
         <OcrStatus status={ocrStatus} customText={customStatusText} key={`${ocrStatus}-${customStatusText}`} />
-        <input ref="image" type="file" accept="image/*;capture=camera" onChange={this.setImage}/>
-        <button type="submit" value="submit-image" disabled={this.submitDisabled()}>
-          Submit image
-        </button>
-        { " or " }
-        <button type="submit" value="local-ocr" disabled={this.submitDisabled() || typeof Tesseract === 'undefined'} onClick={this.tryLocalOCR.bind(this)} >
-          Try local OCR {typeof Tesseract}
-        </button>
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="form-group">
+              <input ref="image" type="file" accept="image/*;capture=camera" onChange={this.setImage} style={{"font-size": "2.5rem"}}/>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <button className="btn btn-primary btn-lg" type="submit" value="submit-image" disabled={this.submitDisabled()}>
+              Submit image
+            </button>
+            { " or " }
+            <button className="btn btn-primary btn-lg" type="submit" value="local-ocr" disabled={this.submitDisabled() || typeof Tesseract === 'undefined'} onClick={this.tryLocalOCR.bind(this)} >
+              Try local OCR {typeof Tesseract}
+            </button>
+          </div>
+        </div>
         {this.renderOcrResult()}
       </form>
     );

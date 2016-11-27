@@ -17,7 +17,7 @@ class OcrStatus extends React.Component {
 
   render() {
     return (
-      <div className="ocr-status">
+      <div className="ocr-status alert alert-info" style={{"font-size": "2rem"}}>
        <strong>Status: </strong>
        {this.statusText()}
       </div>

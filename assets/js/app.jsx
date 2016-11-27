@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="image-upload-container">
-        <h1>BezE OCR App!</h1>
+        <h1>Bez-E OCR App!</h1>
         <ImageUploadForm />
       </div>
     );
