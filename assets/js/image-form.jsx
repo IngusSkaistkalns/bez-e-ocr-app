@@ -71,7 +71,6 @@ class ImageForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.ocrText);
     return (
       <form onSubmit={this.submit}>
         <Status text={this.state.statusText} />
