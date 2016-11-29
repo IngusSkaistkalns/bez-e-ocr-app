@@ -21,16 +21,13 @@ class BezEOcrApp < Sinatra::Base
 
     begin
       ocr_text = engine.text_for(params[:image][:tempfile].path)
-      ocr_status = 'completed'
       ocr_status_text = "Server side OCR completed!"
     rescue StandardError => e
-      ocr_status = 'failed'
       ocr_status_text = e.message
     end
 
     json(
       ocrText: ocr_text,
-      ocrStatus: ocr_status,
       ocrStatusText: ocr_status_text
     )
   end

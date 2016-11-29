@@ -1,8 +1,7 @@
-// import '../css/styles.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ImageUploadForm from './image-upload-form.jsx';
+import ImageForm from './image-form.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,9 +10,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="image-upload-container">
+      <div className="container">
         <h1>Bez-E OCR App!</h1>
-        <ImageUploadForm />
+        <ImageForm />
       </div>
     );
   }
