@@ -7,7 +7,7 @@ class Editor extends React.Component {
 
     this.state = {
       appWidth: document.getElementById('app').offsetWidth,
-      scale: this.props.scale || 1.0,
+      scale: 1.0,
       width: 16.0,
       height: 9.0,
       border: 40.0
@@ -42,30 +42,38 @@ class Editor extends React.Component {
   }
 
   setImage() {
-    this.props.setImageFromEditor(this.refs.editor.getImageScaledToCanvas());
+    const canvas = this.refs.editor.getImageScaledToCanvas();
+    this.props.setImageFromEditor(canvas);
+    this.setState({scale: 1.0});
   }
 
   render() {
      return (
-      <div className='mt-2'>
-        <div className="btn-group">
-          <button type="button" className="btn btn-primary" onClick={this.changeWidth.bind(this, -1)}>-</button>
-          <button type="button" className="btn btn-primary">{this.state.width}</button>
-          <button type="button" className="btn btn-primary" onClick={this.changeWidth.bind(this, 1)}>+</button>
+      <div className="mt-2">
+        <div className='row'>
+          <div className="col-sm-4 mb-1">
+            <div className="btn-group btn-group-justified">
+              <label className="btn btn-primary" onClick={this.changeWidth.bind(this, -1)}>-</label>
+              <label className="btn">{this.state.width}</label>
+              <label className="btn btn-primary" onClick={this.changeWidth.bind(this, 1)}>+</label>
+            </div>
+          </div>
+          <div className="col-sm-4 mb-1">
+            <div className="btn-group btn-group-justified">
+              <label className="btn btn-primary" onClick={this.changeScale.bind(this, -0.1)}>-</label>
+              <label className="btn">{Math.round(this.state.scale * 100) / 100 }</label>
+              <label className="btn btn-primary" onClick={this.changeScale.bind(this, 0.1)}>+</label>
+            </div>
+          </div>
+          <div className="col-sm-4 mb-1">
+            <label className="btn btn-primary btn-block" onClick={this.setImage.bind(this)}>Switch</label>
+          </div>
         </div>
-        &nbsp;
-        <div className="btn-group">
-          <button type="button" className="btn btn-primary" onClick={this.changeScale.bind(this, -0.1)}>-</button>
-          <button type="button" className="btn btn-primary">{Math.round(this.state.scale * 100) / 100 }</button>
-          <button type="button" className="btn btn-primary" onClick={this.changeScale.bind(this, 0.1)}>+</button>
-        </div>
-        &nbsp;
-        <button type="button" className="btn btn-primary" onClick={this.setImage.bind(this)}>Switch</button>
         <div className='mt-1'>
           <AvatarEditor ref="editor" image={this.props.image} width={this.getWidth()} height={this.getHeight()} scale={this.state.scale} />
         </div>
       </div>
-      );
+    );
   }
 }
 

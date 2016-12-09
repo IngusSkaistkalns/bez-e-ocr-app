@@ -9,8 +9,6 @@ class BezEOcrApp < Sinatra::Base
 
   set :session_secret, SecureRandom.hex(32)
 
-  use Rack::Protection::AuthenticityToken
-
   get '/' do
     slim :index
   end
