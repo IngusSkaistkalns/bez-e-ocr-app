@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "axios": "0.15.2"
+    "axios": "0.15.2",
+    "filesize": "3.3.0",
+    "react-avatar-editor": "6.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -24,6 +26,7 @@
     "jsx-loader": "^0.13.2",
     "react-hot-loader": "3.0.0-beta.6",
     "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"

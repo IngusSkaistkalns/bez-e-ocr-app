@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: ['./assets/js/app.jsx', './assets/css/style.css'],
+  entry: ['./assets/js/app.jsx', './assets/css/style.scss'],
   output: {
     path: '.',
     filename: 'public/app.js'
@@ -9,7 +9,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.html$/, loader: "file?name=[name].[ext]"} ,
-      { test: /\.css$/, loader: "style-loader!css-loader?root=." },
+      { test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"] },
       { test: /\.js$/, loader: "babel-loader", exclude: '/node_modules/' },
       { test: /\.jsx$/, loaders: ['jsx-loader', "babel-loader"] }
     ]

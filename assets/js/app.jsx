@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import ImageForm from './image-form.jsx';
 
+const css = require("!css-loader!sass-loader!../css/style.scss");
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div id="app" className="container">
         <h1>Bez-E OCR App!</h1>
         <ImageForm />
       </div>
@@ -18,4 +20,8 @@ class App extends React.Component {
   }
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+try {
+  ReactDOM.render(<App />, document.getElementById('root'));
+} catch(e) {
+  ReactDOM.render(e, document.getElementById('root'));
+}

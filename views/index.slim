@@ -4,9 +4,9 @@ html
     title BezE OCR
     meta id="csrf" name="csrf" value=session[:csrf]
     meta name="viewport" content="width=device-width, initial-scale=1"
-    link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"
   body
-    #root
+    #root.container
   script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js"
   - if ENV['RACK_ENV'] == 'production'
     script src="/app.js"
