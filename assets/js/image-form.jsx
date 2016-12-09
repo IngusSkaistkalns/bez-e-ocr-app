@@ -137,7 +137,7 @@ class ImageForm extends React.Component {
             </label>
           </div>
         </div>
-        { this.state.imageUrl && <Editor image={this.state.imageUrl} setImageFromEditor={this.setImageFromEditor.bind(this)} /> }
+        { this.state.imageUrl && <Editor image={this.state.imageUrl} setImageFromEditor={this.setImageFromEditor.bind(this)} scale={1.0} /> }
         <OcrText text={this.state.ocrText} key={this.state.ocrText} />
       </form>
     );

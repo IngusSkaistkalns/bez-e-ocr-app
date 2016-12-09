@@ -7,7 +7,7 @@ class Editor extends React.Component {
 
     this.state = {
       appWidth: document.getElementById('app').offsetWidth,
-      scale: 1.0,
+      scale: this.props.scale || 1.0,
       width: 16.0,
       height: 9.0,
       border: 40.0
@@ -56,7 +56,7 @@ class Editor extends React.Component {
         &nbsp;
         <div className="btn-group">
           <button type="button" className="btn btn-primary" onClick={this.changeScale.bind(this, -0.1)}>-</button>
-          <button type="button" className="btn btn-primary">{this.state.scale}</button>
+          <button type="button" className="btn btn-primary">{Math.round(this.state.scale * 100) / 100 }</button>
           <button type="button" className="btn btn-primary" onClick={this.changeScale.bind(this, 0.1)}>+</button>
         </div>
         &nbsp;
